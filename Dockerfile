@@ -28,9 +28,9 @@ ENV N8N_BASIC_AUTH_PASSWORD=$PASSWORD
 
 ENV N8N_USER_ID=root
 
-RUN apk add --update graphicsmagick tzdata
-
 USER root
+
+RUN apk add --update graphicsmagick tzdata
 
 RUN apk --update add --virtual build-dependencies python3 build-base && \
     npm_config_user=root npm install --location=global n8n@${N8N_VERSION} && \
